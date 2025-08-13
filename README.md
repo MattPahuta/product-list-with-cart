@@ -77,7 +77,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Coding in Public](https://www.youtube.com/watch?v=06y49jiG9UQ) - Chris over at Coding in Public recently built this project with Astro. I haven't watched the full video yet, but his content, particularly around Astro, is top notch and I expect this to be an interesting approach to completing the project.
 
 
 ## Author
