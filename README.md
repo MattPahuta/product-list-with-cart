@@ -45,8 +45,10 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- Tailwind CSS
+- CSS Grid
+- CSS Flexbox
 - Mobile-first workflow
+- [TailwindCSS](https://tailwindcss.com/) - CSS framework
 - [React](https://reactjs.org/) - JS library
 
 
