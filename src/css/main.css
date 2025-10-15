@@ -9,6 +9,12 @@
   --color-brand-rose-100: hsl(13, 31%, 94%);
   --color-brand-rose-50: hsl(20, 50%, 98%);
   --color-success-green: hsl(159, 69%, 38%);
+
+  --font-redhat: "Red Hat Text", sans-serif;
+}
+
+body {
+  @apply font-redhat;
 }
 
 /* :root {

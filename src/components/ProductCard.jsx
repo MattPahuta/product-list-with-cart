@@ -4,7 +4,7 @@ function ProductCard({product}) {
   const { name, category, price, image } = product;
 
   return (
-    <div className="">
+    <div className="outline-2 outline-red-600">
       <picture>
         <source media="(min-width: 1024px)" srcSet={image.desktop} />
         <source media="(min-width: 768px)" srcSet={image.tablet} />
