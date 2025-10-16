@@ -1,7 +1,11 @@
 function AddToCartButton() {
+  // absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+
   return (
-    <button className="h-11 w-40 font-semibold text-stone-900 border-stone-400 rounded-full">
+    <button className="h-11 w-40 font-semibold bg-white text-brand-rose-900 border border-brand-rose-400 rounded-full cursor-pointer flex items-center justify-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <svg
+        aria-hidden="true"
+        focusable="false"
         xmlns="http://www.w3.org/2000/svg"
         width="21"
         height="20"

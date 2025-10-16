@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 @import "tailwindcss";
+
+/* for plugins - examples */
+/* @plugin "daisyui"; */
 
 @theme {
   --color-brand-red-500: hsl(14, 86%, 42%); 
