@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ProductMenu from "./components/ProductMenu";
 import Cart from "./components/Cart";
-
 import { products } from "./data/data";
 
 function App() {

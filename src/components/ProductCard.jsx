@@ -24,7 +24,7 @@ function ProductCard({product, onAddToCart}) {
       <div className="relative">
         <button
           onClick={onAddToCart}
-          className="h-11 w-40 font-semibold bg-white text-brand-rose-900 border border-brand-rose-400 rounded-full cursor-pointer flex items-center justify-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          className="h-11 w-40 font-semibold bg-white text-brand-rose-900 border border-brand-rose-400 rounded-full cursor-pointer flex items-center justify-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:text-brand-red-500 hover:border-2 hover:border-brand-red-500 focus-visible:outline-2 focus-visible:outline-brand-red-500 focus-visible:-outline-offset-1 focus:text-brand-red-500 transition">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -49,8 +49,10 @@ function ProductCard({product, onAddToCart}) {
 
       <div className="space-y-1 mt-12">
         <p className="text-brand-rose-500 text-sm">{category}</p>
-        <h3 className="text-brand-rose-900">{name}</h3>
-        <p className="text-brand-red-500">{price.toFixed(2)}</p>
+        <h3 className="font-semibold text-brand-rose-900">{name}</h3>
+        <p className="font-semibold text-brand-red-500">
+          {price.toFixed(2)}
+        </p>
       </div>
     </div>
   );

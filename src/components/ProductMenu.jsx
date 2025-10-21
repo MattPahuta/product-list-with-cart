@@ -6,7 +6,7 @@ function ProductMenu({products, onAddToCart}) {
       <h1 className="mb-8 text-4xl font-bold text-stone-900">Desserts</h1>
 
       {/* ToDo: this should be a ul with li elements as each product card */}
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
         {products.map((product) => (
           <ProductCard 
             key={product.name} 
@@ -19,4 +19,7 @@ function ProductMenu({products, onAddToCart}) {
   );
 }
 
+// *** make this component pure? 
+// - Test with console logs to see when re-renders occur
+// export default React.memo(ProductMenu);
 export default ProductMenu;
