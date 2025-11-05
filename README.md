@@ -76,6 +76,20 @@ const proudOfThisFunc = () => {
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
+Details for Project Details on Portfolio:
+- Handling cart state
+  - Initially, I determined to maintain a simple cart state within my App file. The project isn't a particularly robust one and this method would easiliy satisfy the needs of the limited complexity.
+  - After that initial, simple implementation, I decided to use React Context, imagining expanding the menu beyond the simple dessert selections and allow for the app to scale up. 
+  - A step beyond that I wouldn't necessarily use for this specific project - Redux to handle state.
+
+Challenges with Styling the buttons, handling the different button render states:
+
+Additional project details: Addition of localStorage, Integrate with Firebase (DB)?
+- Challenge: simple dataset - need to enhnace with unique IDs for items, potentiall other enhancements.
+- Design comp calls for the cart item handling on Cart component to remove item with all quantities of item from cart. I went a step beyond this to leverage the existing Cart modal to:
+  - if more than one item in cart, display item with quantity and allow for increasing/decreasing quantity
+
+
 ### Useful resources
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.

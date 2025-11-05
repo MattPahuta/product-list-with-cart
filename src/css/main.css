@@ -6,6 +6,7 @@
 
 @theme {
   --color-brand-red-500: hsl(14, 86%, 42%); 
+  --color-brand-red-900: hsl(12, 73%, 28%);
   --color-brand-rose-900: hsl(14, 65%, 9%);
   --color-brand-rose-500: hsl(12, 20%, 44%);
   --color-brand-rose-400: hsl(7, 20%, 60%);
