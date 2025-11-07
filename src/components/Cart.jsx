@@ -4,7 +4,7 @@ import carbonNeutralIcon from "../assets/images/icon-carbon-neutral.svg";
 
 // ToDo: create CartItem component
 
-function Cart({ cartItems, handleRemoveFromCart, handleConfirmOrder }) {
+function Cart({ cartItems, onRemoveFromCart, handleConfirmOrder }) {
   // Calculate order total
   const orderTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
 
@@ -54,7 +54,7 @@ function Cart({ cartItems, handleRemoveFromCart, handleConfirmOrder }) {
                 <button
                   type="button"
                   aria-label={`Remove ${item.name} from cart`}
-                  onClick={handleRemoveFromCart}
+                  onClick={() => onRemoveFromCart(item)}
                   className="group inline-flex items-center justify-center rounded-full size-7 border border-brand-rose-400 cursor-pointer hover:border-2 hover:border-brand-rose-900 transition">
                   <svg
                     focusable="false"

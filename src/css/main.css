@@ -21,14 +21,3 @@
 body {
   @apply font-redhat;
 }
-
-/* :root {
-  --brand-red-500: hsl(14, 86%, 42%); 
-  --brand-rose-900: hsl(14, 65%, 9%);
-  --brand-rose-500: hsl(12, 20%, 44%);
-  --brand-rose-400: hsl(7, 20%, 60%);
-  --brand-rose-300: hsl(14, 25%, 72%);
-  --brand-rose-100: hsl(13, 31%, 94%);
-  --brand-rose-50: hsl(20, 50%, 98%);
-  --success-green: hsl(159, 69%, 38%);
-} */
