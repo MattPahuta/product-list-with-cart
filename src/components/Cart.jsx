@@ -4,10 +4,7 @@ import carbonNeutralIcon from "../assets/images/icon-carbon-neutral.svg";
 
 // ToDo: create CartItem component
 
-function Cart({ cartItems, onRemoveFromCart, handleConfirmOrder }) {
-  // Calculate order total
-  const orderTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
-
+function Cart({ cartItems, orderTotal, onRemoveFromCart, onConfirmOrder }) {
 
   return (
     <aside className="p-6 rounded-xl bg-white sm:min-w-sm">
@@ -92,7 +89,7 @@ function Cart({ cartItems, onRemoveFromCart, handleConfirmOrder }) {
 
           <button
             className="w-full py-4 font-semibold text-white rounded-full bg-brand-red-500 shadow-sm cursor-pointer hover:bg-brand-red-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-500 transition"
-            onClick={handleConfirmOrder}>
+            onClick={onConfirmOrder}>
             Confirm Order
           </button>
         </>
