@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 // import { products } from "../data/data";
 import ProductCard from "./ProductCard";
 
-function ProductMenu({products, cartItems, onAddToCart, onRemoveFromCart}) {
+function ProductMenu({products, cartItems, handleAddToCart, handleRemoveFromCart}) {
   return (
     <section className="max-w-4xl">
       <h1 className="mb-8 text-[2.5rem] font-bold text-stone-900">Desserts</h1>
@@ -17,9 +17,8 @@ function ProductMenu({products, cartItems, onAddToCart, onRemoveFromCart}) {
               key={product.name} 
               product={product} 
               quantity={cartItem ? cartItem.quantity : 0}
-              // onAddToCart={() => onAddToCart(product)}
-              onAddToCart={onAddToCart}
-              onRemoveFromCart={onRemoveFromCart}
+              handleAddToCart={handleAddToCart}
+              handleRemoveFromCart={handleRemoveFromCart}
             />
           );
         })}
@@ -31,8 +30,8 @@ function ProductMenu({products, cartItems, onAddToCart, onRemoveFromCart}) {
 ProductMenu.propTypes = {
   products: PropTypes.array.isRequired,
   cartItems: PropTypes.array.isRequired,
-  onAddToCart: PropTypes.func.isRequired,
-  onRemoveFromCart: PropTypes.func.isRequired,
+  handleAddToCart: PropTypes.func.isRequired,
+  handleRemoveFromCart: PropTypes.func.isRequired,
 };
 
 // *** make this component pure? 

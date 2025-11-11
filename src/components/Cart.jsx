@@ -4,7 +4,7 @@ import carbonNeutralIcon from "../assets/images/icon-carbon-neutral.svg";
 
 // ToDo: create CartItem component
 
-function Cart({ cartItems, orderTotal, onRemoveFromCart, onConfirmOrder }) {
+function Cart({ cartItems, orderTotal, handleRemoveFromCart, handleConfirmOrder }) {
 
   return (
     <aside className="p-6 rounded-xl bg-white sm:min-w-sm">
@@ -51,7 +51,7 @@ function Cart({ cartItems, orderTotal, onRemoveFromCart, onConfirmOrder }) {
                 <button
                   type="button"
                   aria-label={`Remove ${item.name} from cart`}
-                  onClick={() => onRemoveFromCart(item)}
+                  onClick={() => handleRemoveFromCart(item)}
                   className="group inline-flex items-center justify-center rounded-full size-7 border border-brand-rose-400 cursor-pointer hover:border-2 hover:border-brand-rose-900 transition">
                   <svg
                     focusable="false"
@@ -89,7 +89,7 @@ function Cart({ cartItems, orderTotal, onRemoveFromCart, onConfirmOrder }) {
 
           <button
             className="w-full py-4 font-semibold text-white rounded-full bg-brand-red-500 shadow-sm cursor-pointer hover:bg-brand-red-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-500 transition"
-            onClick={onConfirmOrder}>
+            onClick={handleConfirmOrder}>
             Confirm Order
           </button>
         </>

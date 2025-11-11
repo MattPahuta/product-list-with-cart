@@ -79,14 +79,14 @@ function App() {
       <ProductMenu
         products={products}
         cartItems={cartItems}
-        onAddToCart={handleAddToCart}
-        onRemoveFromCart={handleRemoveFromCart}
+        handleAddToCart={handleAddToCart}
+        handleRemoveFromCart={handleRemoveFromCart}
       />
       <Cart
         cartItems={cartItems}
         orderTotal={orderTotal}
-        onRemoveFromCart={handleRemoveFromCart}
-        onConfirmOrder={handleConfirmOrder}
+        handleRemoveFromCart={handleRemoveFromCart}
+        handleConfirmOrder={handleConfirmOrder}
       />
       <OrderConfirmationModal
         isOpen={isOrderConfirmed}

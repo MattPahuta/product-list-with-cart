@@ -1,13 +1,11 @@
 import PropTypes from "prop-types";
 // import AddToCartButton from "./AddToCartButton";
 import { Icon } from '@iconify/react';
-import decrementQtyIcon from "../assets/images/icon-decrement-quantity.svg";
-import incrementQtyIcon from "../assets/images/icon-increment-quantity.svg";
 
-function ProductCard({product, quantity, onAddToCart, onRemoveFromCart}) {
+function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart}) {
   const { name, category, price, image } = product;
   const inCart = quantity > 0;
-  // ToDo: Add clsx utility to help with dynamic class names
+  // ToDo: Add clsx utility to help with conditionally applying class names
 
   return (
     <div className="relative grid">
@@ -32,7 +30,7 @@ function ProductCard({product, quantity, onAddToCart, onRemoveFromCart}) {
       <div className="relative">
         {!inCart ? (
           <button
-            onClick={() => onAddToCart(product)}
+            onClick={() => handleAddToCart(product)}
             className="h-11 w-40 font-semibold bg-white text-brand-rose-900 border border-brand-rose-400 rounded-full cursor-pointer flex items-center justify-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:text-brand-red-500 hover:border-2 hover:border-brand-red-500 focus-visible:outline-2 focus-visible:outline-brand-red-500 focus-visible:-outline-offset-1 focus:text-brand-red-500 transition">
             <svg
               aria-hidden="true"
@@ -56,20 +54,19 @@ function ProductCard({product, quantity, onAddToCart, onRemoveFromCart}) {
           </button>
         ) : (
           <div className="p-3 h-11 w-40 text-white bg-brand-red-500 border border-brand-red-500 rounded-full flex items-center justify-between absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <button className="w-6 h-6 inline-flex items-center justify-center rounded-full cursor-pointer hover:bg-white hover:text-brand-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            <button
+              onClick={() => handleRemoveFromCart(product)}
+              aria-label={`Remove one ${name} from cart`}
+              className="w-6 h-6 border-2 inline-flex items-center justify-center rounded-full cursor-pointer hover:bg-white hover:text-brand-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus:bg-white focus:text-brand-red-500">
               <span className="sr-only">Decrease item in cart</span>
-              <Icon
-                className="size-5"
-                icon="simple-line-icons:minus"
-              />
+              <Icon className="size-5" icon="octicon:dash-16" />
             </button>
             <p className="text-sm font-bold">{quantity}</p>
-            <button className="w-6 h-6 inline-flex items-center justify-center rounded-full cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-              <span className="sr-only">Increase item in cart</span>
-              <Icon
-                className="size-5"
-                icon="simple-line-icons:plus"
-              />
+            <button
+              onClick={() => handleAddToCart(product)}
+              aria-label={`Add another ${name} to cart`}
+              className="w-6 h-6 border-2 inline-flex items-center justify-center rounded-full cursor-pointer hover:bg-white hover:text-brand-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus:bg-white focus:text-brand-red-500">
+              <Icon className="size-6" icon="octicon:plus-16" />
             </button>
           </div>
         )}
@@ -91,9 +88,10 @@ ProductCard.PropTypes = {
     name: PropTypes.string,
     category: PropTypes.string,
     price: PropTypes.number,
-    image: PropTypes.object
+    image: PropTypes.object,
   }),
-  onAddToCart: PropTypes.func,
+  handleAddToCart: PropTypes.func,
+  handleRemoveFromCart: PropTypes.func,
 };
 
 export default ProductCard;
