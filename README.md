@@ -96,6 +96,8 @@ Additional changes and enhancements from design comp and project assets
 - Updates (minor) to font sizes, colors, borders, etc. to improve A11Y
 - Implemented Iconify icons for some of the graphic assets to improve visual presentation over supplied .svg icons
 
+- Added smooth transitions using the Framer Motion library 
+
 
 ### Useful resources
 
