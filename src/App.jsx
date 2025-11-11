@@ -78,7 +78,9 @@ function App() {
     <main className="container mx-auto max-w-7xl p-6 lg:py-10 grid gap-8 justify-center items-start lg:grid-flow-col">
       <ProductMenu
         products={products}
+        cartItems={cartItems}
         onAddToCart={handleAddToCart}
+        onRemoveFromCart={handleRemoveFromCart}
       />
       <Cart
         cartItems={cartItems}

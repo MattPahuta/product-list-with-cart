@@ -1,23 +1,39 @@
+import PropTypes from "prop-types";
+// import { products } from "../data/data";
 import ProductCard from "./ProductCard";
 
-function ProductMenu({products, onAddToCart}) {
+function ProductMenu({products, cartItems, onAddToCart, onRemoveFromCart}) {
   return (
     <section className="max-w-4xl">
       <h1 className="mb-8 text-[2.5rem] font-bold text-stone-900">Desserts</h1>
 
       {/* ToDo: this should be a ul with li elements as each product card */}
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <ProductCard 
-            key={product.name} 
-            product={product} 
-            onAddToCart={() => onAddToCart(product)}
-          />
-        ))}
+        {products.map((product) => {
+          const cartItem = cartItems.find((item) => item.name === product.name);
+          // check for menu item in cart
+          return (
+            <ProductCard 
+              key={product.name} 
+              product={product} 
+              quantity={cartItem ? cartItem.quantity : 0}
+              // onAddToCart={() => onAddToCart(product)}
+              onAddToCart={onAddToCart}
+              onRemoveFromCart={onRemoveFromCart}
+            />
+          );
+        })}
       </div>
     </section>
   );
 }
+
+ProductMenu.propTypes = {
+  products: PropTypes.array.isRequired,
+  cartItems: PropTypes.array.isRequired,
+  onAddToCart: PropTypes.func.isRequired,
+  onRemoveFromCart: PropTypes.func.isRequired,
+};
 
 // *** make this component pure? 
 // - Test with console logs to see when re-renders occur

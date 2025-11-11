@@ -4,6 +4,7 @@ import confirmedIcon from "../assets/images/icon-order-confirmed.svg";
 function OrderConfirmationModal({isOpen, cartItems, orderTotal, onClose}) {
   
   if (!isOpen) return null;
+  // ToDo: add smooth transitions - open/close modal
   
   return (
     <div

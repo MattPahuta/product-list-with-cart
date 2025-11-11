@@ -89,6 +89,13 @@ Additional project details: Addition of localStorage, Integrate with Firebase (D
 - Design comp calls for the cart item handling on Cart component to remove item with all quantities of item from cart. I went a step beyond this to leverage the existing Cart modal to:
   - if more than one item in cart, display item with quantity and allow for increasing/decreasing quantity
 
+Initial project solution featured conventional state and props drilled to the components needing them. This approach worked perfectly fine for the project with it's limited scope (one dessert menu with its items, a cart and a modal) and was a good process to undertake as an initial version. However, once everything was working properly and as expected, I decided to enhance the app by incorporating React Context to handle state. This simplified the distribution of props and put the project in a better place to potentially expand the menu and add additional features. 
+
+
+Additional changes and enhancements from design comp and project assets
+- Updates (minor) to font sizes, colors, borders, etc. to improve A11Y
+- Implemented Iconify icons for some of the graphic assets to improve visual presentation over supplied .svg icons
+
 
 ### Useful resources
 
