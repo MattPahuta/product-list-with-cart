@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 // import AddToCartButton from "./AddToCartButton";
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from "motion/react";
 import { Icon } from '@iconify/react';
-
 
 function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart}) {
   const { name, category, price, image } = product;
@@ -30,16 +29,24 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
       </div>
       {/* product actions container */}
       <div className="relative">
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={true}>
           {!inCart ? (
             <motion.button
               key="add"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
               onClick={() => handleAddToCart(product)}
-              className="h-11 w-40 font-semibold bg-white text-brand-rose-900 border border-brand-rose-400 rounded-full cursor-pointer flex items-center justify-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:text-brand-red-500 hover:border-2 hover:border-brand-red-500 focus-visible:outline-2 focus-visible:outline-brand-red-500 focus-visible:-outline-offset-1 focus:text-brand-red-500 transition">
+              className="h-11 w-40 font-semibold bg-white
+              text-brand-rose-900 border border-brand-rose-400
+              rounded-full cursor-pointer flex items-center
+              justify-center gap-2 absolute top-1/2 left-1/2
+              -translate-x-1/2 -translate-y-1/2
+              hover:text-brand-red-500 hover:border-2
+              hover:border-brand-red-500 focus-visible:outline-2
+              focus-visible:outline-brand-red-500
+              focus-visible:-outline-offset-1 focus:text-brand-red-500 transition-colors">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -63,9 +70,9 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
           ) : (
             <motion.div
               key="controls"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
               className="p-3 h-11 w-40 text-white bg-brand-red-500
               border border-brand-red-500 rounded-full flex
@@ -80,10 +87,10 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
               </button>
               <motion.p
                 key={quantity}
-                initial={{ scale: 0.8, opacity: 0 }}
+                initial={{ scale: 0.7, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ duration: 0.15, ease: 'easeOut' }}
+                exit={{ scale: 0.7, opacity: 0 }}
+                transition={{ duration: 0.1, ease: 'easeOut' }}
                 className="text-sm font-bold">
                 {quantity}
               </motion.p>
