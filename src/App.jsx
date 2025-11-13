@@ -88,12 +88,14 @@ function App() {
         handleRemoveFromCart={handleRemoveFromCart}
         handleConfirmOrder={handleConfirmOrder}
       />
-      <OrderConfirmationModal
-        isOpen={isOrderConfirmed}
-        cartItems={cartItems}
-        orderTotal={orderTotal}
-        onClose={handleNewOrder}
-      />
+      {isOrderConfirmed && (
+        <OrderConfirmationModal
+          isOpen={isOrderConfirmed}
+          cartItems={cartItems}
+          orderTotal={orderTotal}
+          handleDismiss={handleNewOrder}
+        />
+      )}
     </main>
   );
 }
