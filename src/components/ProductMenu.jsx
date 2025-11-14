@@ -8,7 +8,7 @@ function ProductMenu({products, cartItems, handleAddToCart, handleRemoveFromCart
       <h1 className="mb-8 text-[2.5rem] font-bold text-stone-900">Desserts</h1>
 
       {/* ToDo: this should be a ul with li elements as each product card */}
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products.map((product) => {
           const cartItem = cartItems.find((item) => item.name === product.name);
           // check for menu item in cart
