@@ -97,11 +97,13 @@ Additional changes and enhancements from design comp and project assets
 - Implemented Iconify icons for some of the graphic assets to improve visual presentation over supplied .svg icons
 
 - Added smooth transitions using the Framer Motion library 
+- Included remove-scroll and focus-lock libraries to enhance confirmation modal
+- Overall, I'm pleased with the look and feel of the basic interactions, modal behavior achieved with these libraries and a combination of Tailwind styles
 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Complete guide to ARIA live regions for Devs](https://www.a11y-collective.com/blog/aria-live/) - A brief but solid guide to enhancing accessibility with ARIA live regions. This was really helpful in implementing and better understanding some additional accessibility features for my shopping cart.
 - [Coding in Public](https://www.youtube.com/watch?v=06y49jiG9UQ) - Chris over at Coding in Public recently built this project with Astro. I haven't watched the full video yet, but his content, particularly around Astro, is top notch and I expect this to be an interesting approach to completing the project.
 
 

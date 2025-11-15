@@ -3,10 +3,12 @@ import ProductMenu from "./components/ProductMenu";
 import Cart from "./components/Cart";
 import OrderConfirmationModal from "./components/OrderConfirmationModal";
 import { products } from "./data/data";
+import useCartAnnouncements from "./hooks/useCartAnnouncements";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
+  const { cartAnnouncementMessage, announce} = useCartAnnouncements();
 
   // Calculate order total
   const orderTotal = cartItems.reduce(
@@ -14,7 +16,7 @@ function App() {
     0
   );
 
-  // ** Handle adding items to cart
+  // ** ToDo: Rename functions - handleAddItem, handleRemoveItem, handleRemoveAllItems
   function handleAddToCart(product) {
     // update cart state
     setCartItems((prevCartItems) => {
@@ -34,11 +36,12 @@ function App() {
       return [...prevCartItems, { ...product, quantity: 1 }];
     });
 
+    announce(`${product.name} added to the cart.`);
+
     console.log(`${product.name} added to cart`);
     console.log(`Price: ${product.price}`);
   }
 
-  // ** Handle removing items from cart
   function handleRemoveFromCart(product) {
     // update cart state
     setCartItems((prevCartItems) => {
@@ -61,17 +64,27 @@ function App() {
         (item) => item.name !== product.name
       );
     });
+
+    announce(`One ${product.name} removed from the cart.`);
   }
 
+  function handleRemoveAllItems(product) {
+    setCartItems((prevCartItems) => {
+      return prevCartItems.filter((item) => item.name !== product.name);
+    });
+
+    announce(`All ${product.name} items removed from the cart.`);
+  }
+
+  // ToDo: remove function and handle inline?
   function handleConfirmOrder() {
     setIsOrderConfirmed(true);
-    console.log('Confirming order...')
   }
 
   function handleNewOrder() {
     setCartItems([]);
     setIsOrderConfirmed(false);
-    console.log('Starting new order...');
+    announce("");
   }
 
   return (
@@ -82,10 +95,18 @@ function App() {
         handleAddToCart={handleAddToCart}
         handleRemoveFromCart={handleRemoveFromCart}
       />
+      <div 
+        className="sr-only" 
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {cartAnnouncementMessage}  
+      </div>
       <Cart
         cartItems={cartItems}
         orderTotal={orderTotal}
         handleRemoveFromCart={handleRemoveFromCart}
+        handleRemoveAllItems={handleRemoveAllItems}
         handleConfirmOrder={handleConfirmOrder}
       />
       {isOrderConfirmed && (

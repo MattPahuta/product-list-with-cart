@@ -9,7 +9,7 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
   // ToDo: Add clsx utility to help with conditionally applying class names
 
   return (
-    <div className="relative grid">
+    <li className="relative grid">
       <div
         className={`overflow-hidden rounded-lg ${
           inCart ? 'outline-2 outline-brand-red-500' : ''
@@ -32,6 +32,7 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
         <AnimatePresence initial={true}>
           {!inCart ? (
             <motion.button
+              type="button"
               key="add"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -79,8 +80,9 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
               items-center justify-between absolute top-1/2 left-1/2
               -translate-x-1/2 -translate-y-1/2">
               <button
+                type="button"
                 onClick={() => handleRemoveFromCart(product)}
-                aria-label={`Remove one ${name} from cart`}
+                aria-label={`Decrease quantity of ${name} in cart`}
                 className="w-6 h-6 border-2 inline-flex items-center justify-center rounded-full cursor-pointer hover:bg-white hover:text-brand-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus:bg-white focus:text-brand-red-500">
                 <span className="sr-only">Decrease item in cart</span>
                 <Icon className="size-5" icon="octicon:dash-16" />
@@ -95,8 +97,9 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
                 {quantity}
               </motion.p>
               <button
+                type="button"
                 onClick={() => handleAddToCart(product)}
-                aria-label={`Add another ${name} to cart`}
+                aria-label={`Increase quantity of ${name} in cart`}
                 className="w-6 h-6 border-2 inline-flex items-center justify-center rounded-full cursor-pointer hover:bg-white hover:text-brand-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus:bg-white focus:text-brand-red-500">
                 <Icon className="size-6" icon="octicon:plus-16" />
               </button>
@@ -112,7 +115,7 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
           {price.toFixed(2)}
         </p>
       </div>
-    </div>
+    </li>
   );
 }
 

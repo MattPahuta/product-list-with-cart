@@ -4,11 +4,11 @@ import carbonNeutralIcon from "../assets/images/icon-carbon-neutral.svg";
 
 // ToDo: create CartItem component
 
-function Cart({ cartItems, orderTotal, handleRemoveFromCart, handleConfirmOrder }) {
+function Cart({ cartItems, orderTotal, handleRemoveAllItems, handleConfirmOrder }) {
 
   return (
-    <aside className="p-6 rounded-xl bg-white sm:min-w-sm">
-      <h2 className="mb-6 font-bold text-2xl text-brand-red-500">
+    <aside className="p-6 rounded-xl bg-white sm:min-w-sm" aria-labelledby="cartHeading">
+      <h2 id="cartHeading" className="mb-6 font-bold text-2xl text-brand-red-500">
         Your Cart ({cartItems.length})
       </h2>
       {/* Empty cart state */}
@@ -50,9 +50,9 @@ function Cart({ cartItems, orderTotal, handleRemoveFromCart, handleConfirmOrder 
                 </div>
                 <button
                   type="button"
-                  aria-label={`Remove ${item.name} from cart`}
-                  onClick={() => handleRemoveFromCart(item)}
-                  className="group inline-flex items-center justify-center rounded-full size-7 border border-brand-rose-400 cursor-pointer hover:border-2 hover:border-brand-rose-900 transition">
+                  aria-label={`Remove all ${item.name} from cart`}
+                  onClick={() => handleRemoveAllItems(item)}
+                  className="group inline-flex items-center justify-center rounded-full size-7 border border-brand-rose-400 cursor-pointer hover:border-2 hover:border-brand-rose-900 focus-visible:border-brand-rose-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-rose-900 transition">
                   <svg
                     focusable="false"
                     aria-hidden="true"
@@ -88,6 +88,7 @@ function Cart({ cartItems, orderTotal, handleRemoveFromCart, handleConfirmOrder 
           </div>
 
           <button
+            type="button"
             className="w-full py-4 font-semibold text-white rounded-full bg-brand-red-500 shadow-sm cursor-pointer hover:bg-brand-red-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-500 transition"
             onClick={handleConfirmOrder}>
             Confirm Order

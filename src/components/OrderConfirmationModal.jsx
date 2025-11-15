@@ -44,8 +44,9 @@ function OrderConfirmationModal({
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 }}
-              className="px-3 fixed flex items-center justify-center inset-0 bg-black/60">
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="px-3 fixed flex items-center justify-center inset-0 bg-black/60 backdrop-blur-xs">
               <motion.div
                 role="dialog"
                 aria-modal="true"
@@ -101,6 +102,7 @@ function OrderConfirmationModal({
                   </p>
                 </section>
                 <button
+                  type="button"
                   ref={startNewOrderBtnRef}
                   onClick={handleDismiss}
                   className="w-full py-4 font-semibold text-white rounded-full bg-brand-red-500 shadow-sm cursor-pointer hover:bg-brand-red-900 focus:outline-2 focus:outline-offset-2 focus:outline-brand-red-500 transition">
