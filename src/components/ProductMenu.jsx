@@ -31,7 +31,4 @@ ProductMenu.propTypes = {
   handleRemoveFromCart: PropTypes.func.isRequired,
 };
 
-// *** make this component pure? 
-// - Test with console logs to see when re-renders occur
-// export default React.memo(ProductMenu);
 export default ProductMenu;

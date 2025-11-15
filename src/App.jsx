@@ -10,13 +10,11 @@ function App() {
   const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
   const { cartAnnouncementMessage, announce} = useCartAnnouncements();
 
-  // Calculate order total
   const orderTotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  // ** ToDo: Rename functions - handleAddItem, handleRemoveItem, handleRemoveAllItems
   function handleAddToCart(product) {
     // update cart state
     setCartItems((prevCartItems) => {
@@ -35,11 +33,7 @@ function App() {
       // if product not in cart, add it to end of array and add quantity property with initial value, spreading existing cart items within the array first
       return [...prevCartItems, { ...product, quantity: 1 }];
     });
-
     announce(`${product.name} added to the cart.`);
-
-    console.log(`${product.name} added to cart`);
-    console.log(`Price: ${product.price}`);
   }
 
   function handleRemoveFromCart(product) {
@@ -64,7 +58,6 @@ function App() {
         (item) => item.name !== product.name
       );
     });
-
     announce(`One ${product.name} removed from the cart.`);
   }
 
@@ -72,11 +65,9 @@ function App() {
     setCartItems((prevCartItems) => {
       return prevCartItems.filter((item) => item.name !== product.name);
     });
-
     announce(`All ${product.name} items removed from the cart.`);
   }
 
-  // ToDo: remove function and handle inline?
   function handleConfirmOrder() {
     setIsOrderConfirmed(true);
   }
