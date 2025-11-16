@@ -8,7 +8,6 @@ function ProductMenu({products, cartItems, handleAddToCart, handleRemoveFromCart
       <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-y-8">
         {products.map((product) => {
           const cartItem = cartItems.find((item) => item.name === product.name);
-          // check for menu item in cart
           return (
             <ProductCard 
               key={product.name} 

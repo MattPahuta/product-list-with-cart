@@ -1,12 +1,10 @@
 import PropTypes from "prop-types";
-// import AddToCartButton from "./AddToCartButton";
 import { motion, AnimatePresence } from "motion/react";
 import { Icon } from '@iconify/react';
 
 function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart}) {
   const { name, category, price, image } = product;
   const inCart = quantity > 0;
-  // ToDo: Add clsx utility to help with conditionally applying class names
 
   return (
     <li className="relative grid">
@@ -27,13 +25,11 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
           />
         </picture>
       </div>
-      {/* product actions container */}
       <div className="relative">
         <AnimatePresence initial={true}>
           {!inCart ? (
             <motion.button
               type="button"
-              key="add"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0 }}
@@ -70,7 +66,6 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
             </motion.button>
           ) : (
             <motion.div
-              key="controls"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0 }}
@@ -107,7 +102,6 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
           )}
         </AnimatePresence>
       </div>
-
       <div className="space-y-1 mt-12">
         <p className="text-brand-rose-500 text-sm">{category}</p>
         <h3 className="font-semibold text-brand-rose-900">{name}</h3>

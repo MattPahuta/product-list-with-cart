@@ -10,10 +10,9 @@ function OrderConfirmationModal({
   orderTotal,
   handleDismiss,
 }) {
-  // if (!isOpen) return null;
+
   const startNewOrderBtnRef = useRef();
 
-  // set focus to 'start new order' button
   useEffect(() => {
     const currentlyFocusedElem = document.activeElement;
     startNewOrderBtnRef.current.focus();
@@ -22,7 +21,6 @@ function OrderConfirmationModal({
     }
   }, []);
 
-  // handle 'escape' key to dismiss modal
   useEffect(() => {
     function handleKeyDown(event) {
       if(event.code === 'Escape') {
