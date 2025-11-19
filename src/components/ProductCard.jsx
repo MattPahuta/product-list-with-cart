@@ -17,7 +17,10 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
             media="(min-width: 1024px)"
             srcSet={image.desktop}
           />
-          <source media="(min-width: 768px)" srcSet={image.tablet} />
+          <source 
+            media="(min-width: 768px)" 
+            srcSet={image.tablet} 
+          />
           <img
             src={image.mobile}
             alt={name}
@@ -103,8 +106,8 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
         </AnimatePresence>
       </div>
       <div className="space-y-1 mt-12">
-        <p className="text-brand-rose-500 text-sm">{category}</p>
-        <h3 className="font-semibold text-brand-rose-900">{name}</h3>
+        <h3 className="text-brand-rose-500 text-sm">{category}</h3>
+        <p className="font-semibold text-brand-rose-900">{name}</p>
         <p className="font-semibold text-brand-red-500">
           {price.toFixed(2)}
         </p>

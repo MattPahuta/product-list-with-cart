@@ -16,23 +16,22 @@ function App() {
   );
 
   function handleAddToCart(product) {
-    // update cart state
+
     setCartItems((prevCartItems) => {
-      // check for existing prescence of the item in cart
       const existingItem = prevCartItems.find(
         (item) => item.name === product.name
       );
+
       if (existingItem) {
-        // update cartItems to increment existing item quantity and return updated item along with any other items in the cart
         return prevCartItems.map((item) =>
           item.name === product.name
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-      // if product not in cart, add it to end of array and add quantity property with initial value, spreading existing cart items within the array first
       return [...prevCartItems, { ...product, quantity: 1 }];
     });
+
     announce(`${product.name} added to the cart.`);
   }
 
@@ -86,12 +85,8 @@ function App() {
         handleAddToCart={handleAddToCart}
         handleRemoveFromCart={handleRemoveFromCart}
       />
-      <div 
-        className="sr-only" 
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        {cartAnnouncementMessage}  
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {cartAnnouncementMessage}
       </div>
       <Cart
         cartItems={cartItems}
