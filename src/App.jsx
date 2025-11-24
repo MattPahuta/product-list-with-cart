@@ -36,15 +36,10 @@ function App() {
   }
 
   function handleRemoveFromCart(product) {
-    // update cart state
     setCartItems((prevCartItems) => {
-      // check for existing item in cart
       const existingItem = prevCartItems.find(
         (item) => item.name === product.name
       );
-      // if item has multiple instances in the cart
-      // - for selected product, decrement quantity by 1
-      // - for other items, leave as is
       if (existingItem && existingItem.quantity > 1) {
         return prevCartItems.map((item) =>
           item.name === product.name
@@ -52,7 +47,6 @@ function App() {
             : item
         );
       }
-      // if quantity of existing item drops to zero, filter out the product
       return prevCartItems.filter(
         (item) => item.name !== product.name
       );
