@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import emptyCartImg from "../assets/images/illustration-empty-cart.svg";
 import carbonNeutralIcon from "../assets/images/icon-carbon-neutral.svg"; 
 import CartItem from "./CartItem";
@@ -51,17 +50,5 @@ function Cart({ cartItems, orderTotal, handleRemoveAllItems, handleConfirmOrder 
     </div>
   );
 }
-
-Cart.PropTypes = {
-  cartItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      quantity: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-  handleRemoveFromCart: PropTypes.func.isRequired,
-  handleConfirmOrder: PropTypes.func.isRequired,
-};
 
 export default Cart;

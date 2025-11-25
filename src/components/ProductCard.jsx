@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { motion, AnimatePresence } from "motion/react";
 import { Icon } from '@iconify/react';
 
@@ -98,7 +97,7 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
         </AnimatePresence>
       </div>
       <div className="space-y-1 mt-12">
-        <h3 className="text-brand-rose-500 text-sm">{category}</h3>
+        <h2 className="text-brand-rose-500 text-sm">{category}</h2>
         <p className="font-semibold text-brand-rose-900">{name}</p>
         <p className="font-semibold text-brand-red-500">
           {price.toFixed(2)}
@@ -107,16 +106,5 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
     </li>
   );
 }
-
-ProductCard.propTypes = {
-  product: PropTypes.shape({
-    name: PropTypes.string,
-    category: PropTypes.string,
-    price: PropTypes.number,
-    image: PropTypes.object,
-  }),
-  handleAddToCart: PropTypes.func,
-  handleRemoveFromCart: PropTypes.func,
-};
 
 export default ProductCard;

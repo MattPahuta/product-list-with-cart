@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 import FocusLock from 'react-focus-lock';
 import { RemoveScroll } from 'react-remove-scroll';
@@ -113,11 +112,5 @@ function OrderConfirmationModal({
     </FocusLock>
   );
 }
-
-OrderConfirmationModal.propTypes = {
-  cartItems: PropTypes.array.isRequired,
-  orderTotal: PropTypes.number.isRequired,
-  handleDismiss: PropTypes.func.isRequired,
-};
 
 export default OrderConfirmationModal;

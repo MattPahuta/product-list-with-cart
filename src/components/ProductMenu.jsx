@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import ProductCard from "./ProductCard";
 
 function ProductMenu({products, cartItems, handleAddToCart, handleRemoveFromCart}) {
@@ -22,12 +21,5 @@ function ProductMenu({products, cartItems, handleAddToCart, handleRemoveFromCart
     </section>
   );
 }
-
-ProductMenu.propTypes = {
-  products: PropTypes.array.isRequired,
-  cartItems: PropTypes.array.isRequired,
-  handleAddToCart: PropTypes.func.isRequired,
-  handleRemoveFromCart: PropTypes.func.isRequired,
-};
 
 export default ProductMenu;
