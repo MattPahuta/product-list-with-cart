@@ -5,9 +5,9 @@ export default function useCartAnnouncements() {
 
   const announce = message => {
     setCartAnnouncementMessage("");
-    setTimeout(() => {
+    Promise.resolve().then(() => {
       setCartAnnouncementMessage(message);
-    }, 0);
+    });
   };
 
   return { cartAnnouncementMessage, announce};

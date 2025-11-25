@@ -14,7 +14,9 @@ function OrderConfirmationModal({
 
   useEffect(() => {
     const currentlyFocusedElem = document.activeElement;
-    startNewOrderBtnRef.current.focus();
+    if (startNewOrderBtnRef.current) {
+      startNewOrderBtnRef.current.focus();
+    }
     return () => {
       currentlyFocusedElem?.focus();
     }
