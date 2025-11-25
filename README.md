@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
-- [Frontend Mentor solution page](https://your-solution-url.com)
+- [Frontend Mentor solution page](https://www.frontendmentor.io/solutions/responsive-menu-and-cart-built-with-react-and-tailwind-css-GdeU4AMcOA)
 - [live demo site](https://product-list-desserts.netlify.app/)
 
 ## My process
@@ -144,11 +144,15 @@ function OrderConfirmationModal({
 
   useEffect(() => {
     const currentlyFocusedElem = document.activeElement;
-    startNewOrderBtnRef.current.focus();
+    // null check for ref
+    if (startNewOrderBtnRef.current) {
+      startNewOrderBtnRef.current.focus();
+    }
     return () => {
       currentlyFocusedElem?.focus();
     }
   }, []);
+
 
   useEffect(() => {
     function handleKeyDown(event) {
@@ -185,9 +189,10 @@ export default function useCartAnnouncements() {
 
   const announce = message => {
     setCartAnnouncementMessage("");
-    setTimeout(() => {
+    // microtask to update state after clearing, force SR update
+    Promise.resolve().then(() => {
       setCartAnnouncementMessage(message);
-    }, 0);
+    });
   };
 
   return { cartAnnouncementMessage, announce};
