@@ -38,15 +38,7 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
               exit={{ opacity: 0, scale: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
               onClick={() => handleAddToCart(product)}
-              className="h-11 w-40 font-semibold bg-white
-              text-brand-rose-900 border border-brand-rose-400
-              rounded-full cursor-pointer flex items-center
-              justify-center gap-2 absolute top-1/2 left-1/2
-              -translate-x-1/2 -translate-y-1/2
-              hover:text-brand-red-500 hover:border-2
-              hover:border-brand-red-500 focus-visible:outline-2
-              focus-visible:outline-brand-red-500
-              focus-visible:-outline-offset-1 focus:text-brand-red-500 transition-colors">
+              className="h-11 w-40 font-semibold bg-white text-brand-rose-900 border border-brand-rose-400 rounded-full cursor-pointer flex items-center justify-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:text-brand-red-500 hover:border-2 hover:border-brand-red-500 focus-visible:outline-2 focus-visible:outline-brand-red-500 focus-visible:-outline-offset-1 focus:text-brand-red-500 transition-colors">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -116,7 +108,7 @@ function ProductCard({product, quantity, handleAddToCart, handleRemoveFromCart})
   );
 }
 
-ProductCard.PropTypes = {
+ProductCard.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
     category: PropTypes.string,

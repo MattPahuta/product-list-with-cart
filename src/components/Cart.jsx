@@ -5,7 +5,7 @@ import CartItem from "./CartItem";
 
 function Cart({ cartItems, orderTotal, handleRemoveAllItems, handleConfirmOrder }) {
   return (
-    <aside className="p-6 rounded-xl bg-white sm:min-w-sm" aria-labelledby="cartHeading">
+    <div className="p-6 rounded-xl bg-white sm:min-w-sm" aria-labelledby="cartHeading">
       <h2 id="cartHeading" className="mb-6 font-bold text-2xl text-brand-red-500">
         Your Cart ({cartItems.length})
       </h2>
@@ -16,7 +16,6 @@ function Cart({ cartItems, orderTotal, handleRemoveAllItems, handleConfirmOrder 
             alt=""
             className="mx-auto my-4 h-32 w-32"
             aria-hidden="true"
-            focusable="false"
           />
           <p className="text-brand-rose-500 font-semibold text-center">
             Your added items will appear here
@@ -49,7 +48,7 @@ function Cart({ cartItems, orderTotal, handleRemoveAllItems, handleConfirmOrder 
           </button>
         </>
       )}
-    </aside>
+    </div>
   );
 }
 
